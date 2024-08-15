@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import HouseCard from './HouseCard';
+import HouseCards from './HouseCards';
 import BookingForm from './BookingForm';
 import './HomeDashboard.css';
 
@@ -51,7 +51,7 @@ const HomeDashboard = ({ houses }) => {
             {/* House Cards */}
             <div className="house-cards">
                 {filteredHouses.map(house => (
-                    <HouseCard
+                    <HouseCards
                         key={house.id}
                         house={house}
                         onBookNow={() => handleBookNow(house)}
