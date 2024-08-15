@@ -4,11 +4,23 @@ import './TopNav.css';
 const TopNav = ({ onLogin, onSignup, onProfile, isLoggedIn }) => {
     return (
         <div className="top-nav">
-            <div className="nav-items">
-                <button onClick={onLogin}>Login</button>
-                <button onClick={onSignup}>Signup</button>
-                {isLoggedIn && (
-                    <button onClick={onProfile}>Profile</button>
+            <div className="logo-container">
+                <img src="" alt="App Logo" className="logo" />
+            </div>
+            <div className="app-name">
+                <h1>Nawiri</h1>
+            </div>
+            <div className="search-bar-container">
+                <input type="text" placeholder="Search..." className="search-bar" />
+            </div>
+            <div className="auth-buttons">
+                {isLoggedIn ? (
+                    <button className="profile-btn" onClick={onProfile}>Profile</button>
+                ) : (
+                    <>
+                        <button className="login-btn" onClick={onLogin}>Login</button>
+                        <button className="signup-btn" onClick={onSignup}>Sign Up</button>
+                    </>
                 )}
             </div>
         </div>

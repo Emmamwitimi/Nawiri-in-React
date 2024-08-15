@@ -1,56 +1,66 @@
-.topnav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #088474; /* Your primary color */
-  }
-  
-  .topnav-logo a {
-    font-size: 24px;
-    color: white;
-    text-decoration: none;
-  }
-  
-  .topnav-search {
-    display: flex;
-    align-items: center;
-  }
-  
-  .topnav-search input {
-    padding: 5px;
-    margin-right: 5px;
-  }
-  
-  .topnav-search button {
-    padding: 5px 10px;
-    background-color: #0D3336;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .topnav-icons {
-    display: flex;
-    align-items: center;
-  }
-  
-  .notification-icon, .profile-icon {
-    margin-right: 20px;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .logout-btn {
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .topnav a {
-    margin-right: 15px;
-    color: white;
-    text-decoration: none;
-  }
-  
+/* TopNav.css */
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #088474; /* Same as the left nav background */
+  padding: 10px;
+  color: white;
+}
+
+.logo-container {
+  flex: 1;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+}
+
+.app-name {
+  flex: 2;
+  text-align: center;
+}
+
+.search-bar-container {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.auth-buttons {
+  flex: 2;
+  display: flex;
+  justify-content: space-around;
+}
+
+.login-btn, .signup-btn, .profile-btn {
+  background-color: #fff;
+  color: #088474;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.login-btn:hover, .signup-btn:hover, .profile-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.signup-btn {
+  background-color: #005f5f;
+  color: white;
+}
+
+.signup-btn:hover {
+  background-color: #003f3f;
+}

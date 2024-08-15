@@ -39,7 +39,7 @@ const App = () => {
                 isLoggedIn={isLoggedIn}
             />
             <LeftNav />
-            <HomeDashboard houses={houses} /> {/* Pass houses data to Dashboard */}
+            <HomeDashboard houses={houses} /> {/* Pass houses data */}
         </div>
     );
 };
