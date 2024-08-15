@@ -1,0 +1,26 @@
+/* App.css */
+
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.main-content {
+    display: flex;
+    flex: 1;
+}
+
+.left-nav {
+    width: 200px;
+    background-color: #088474; /* Same as TopNav */
+    color: white;
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.content-body {
+    flex: 1;
+    padding: 20px;
+    background-color: #f4f4f4;
+}

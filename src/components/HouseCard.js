@@ -1,15 +1,23 @@
 import React from 'react';
-import './HouseCard.css';
+import './HouseCards.css';
 
-const HouseCard = ({ house, onBookNow }) => {
+const HouseCards = ({ houses, onCardClick }) => {
     return (
-        <div className="house-card">
-            <h2>{house.name}</h2>
-            <img src={house.images[0]} alt={house.name} />
-            <p>{house.description}</p>
-            <button onClick={onBookNow}>Book Now</button>
+        <div className="house-cards-container">
+            {houses.map(house => (
+                <div className="house-card" key={house.id} onClick={() => onCardClick(house)}>
+                    <div className="house-images">
+                        <img src={house.images[0]} alt={house.name} className="house-image" />
+                        {/* Additional images can be included in a carousel or gallery */}
+                    </div>
+                    <h2 className="house-name">{house.name}</h2>
+                    <p className="house-location">{house.location}</p>
+                    <p className="house-description">{house.description}</p>
+                    <button className="booking-button">Book Now</button>
+                </div>
+            ))}
         </div>
     );
 };
 
-export default HouseCard;
+export default HouseCards;

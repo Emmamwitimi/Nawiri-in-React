@@ -1,45 +1,67 @@
 import React, { useState, useEffect } from 'react';
 import TopNav from './components/TopNav';
 import LeftNav from './components/LeftNav';
-import HomeDashboard from './components/HomeDashboard';
+import HouseCards from './components/HouseCards';
+import BookingForm from './components/BookingForm';
 import './App.css';
 
 const App = () => {
     const [houses, setHouses] = useState([]);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [selectedLocation, setSelectedLocation] = useState('');
+    const [selectedHouse, setSelectedHouse] = useState(null);
 
     useEffect(() => {
-        // Fetch house data from JSON file
+        // Fetch data from JSON file
         fetch('/houses.json')
-            .then(response => response.json())
-            .then(data => {
-                setHouses(data.houses); // Set the fetched data to state
-            })
-            .catch(error => console.error('Error fetching houses:', error));
+            .then((response) => response.json())
+            .then((data) => setHouses(data.houses))
+            .catch((error) => console.error('Error fetching houses:', error));
     }, []);
 
-    const handleLogin = () => {
-        setIsLoggedIn(true); // Update login state
+    const handleFilterChange = (event) => {
+        setSelectedLocation(event.target.value);
     };
 
-    const handleSignup = () => {
-        setIsLoggedIn(true); // Update signup state
+    const handleCardClick = (house) => {
+        setSelectedHouse(house);
     };
 
-    const handleProfile = () => {
-        // Handle profile actions
+    const handleCloseForm = () => {
+        setSelectedHouse(null);
     };
 
     return (
         <div className="app">
-            <TopNav
-                onLogin={handleLogin}
-                onSignup={handleSignup}
-                onProfile={handleProfile}
-                isLoggedIn={isLoggedIn}
+            <TopNav 
+                onLogin={() => {/* Handle login */}} 
+                onSignup={() => {/* Handle signup */}} 
+                onProfile={() => {/* Handle profile */}} 
+                isLoggedIn={false} // Update based on auth state
             />
-            <LeftNav />
-            <HomeDashboard houses={houses} /> {/* Pass houses data */}
+            <div className="main-content">
+                <LeftNav />
+                <div className="content-body">
+                    <div className="filter-container">
+                        <label htmlFor="location-filter">Filter by Location:</label>
+                        <select id="location-filter" onChange={handleFilterChange}>
+                            <option value="">All</option>
+                            {[...new Set(houses.map(house => house.location))].map(location => (
+                                <option key={location} value={location}>{location}</option>
+                            ))}
+                        </select>
+                    </div>
+                    <HouseCards 
+                        houses={houses.filter(house => !selectedLocation || house.location === selectedLocation)} 
+                        onCardClick={handleCardClick} 
+                    />
+                    {selectedHouse && (
+                        <BookingForm 
+                            house={selectedHouse} 
+                            onClose={handleCloseForm} 
+                        />
+                    )}
+                </div>
+            </div>
         </div>
     );
 };
