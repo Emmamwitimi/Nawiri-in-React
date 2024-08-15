@@ -1,0 +1,101 @@
+/* src/components/HouseCard.css */
+
+.house-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    position: relative;
+  }
+  
+  .house-images img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .house-info {
+    padding: 15px;
+  }
+  
+  .house-info h3 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .house-info p {
+    margin: 10px 0;
+  }
+  
+  button {
+    background-color: #088474;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  button:hover {
+    background-color: #066d61;
+  }
+  
+  .booking-form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .booking-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 500px;
+  }
+  
+  .booking-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .booking-form label {
+    margin-bottom: 10px;
+  }
+  
+  .booking-form input {
+    margin-top: 5px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .booking-form button {
+    background-color: #088474;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  
+  .booking-form button:hover {
+    background-color: #066d61;
+  }
+  
+  .booking-form button[type="button"] {
+    background-color: #ccc;
+    color: #000;
+  }
+  

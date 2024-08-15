@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect,useState } from "react";
+import HouseCard from "./components/HouseCard"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+function App(){
+const [houses,setHouses]=useState([]);
+
+  useEffect(()=>{
+    fetch("http://localhost:3000/houses")
+    .then((response) => response.json()) // Make sure response.json() is called
+    .then((data) => setHouses(data))
+    .catch((error) => console.error("Error fetching houses:", error));
+  },[])
+
+  return(
+    <>
+      <p>Emma</p>
+      <HouseCard houses={houses}/>
+    </>
   );
 }
-
 export default App;

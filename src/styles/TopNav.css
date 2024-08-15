@@ -1,0 +1,56 @@
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #088474; /* Your primary color */
+  }
+  
+  .topnav-logo a {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .topnav-search {
+    display: flex;
+    align-items: center;
+  }
+  
+  .topnav-search input {
+    padding: 5px;
+    margin-right: 5px;
+  }
+  
+  .topnav-search button {
+    padding: 5px 10px;
+    background-color: #0D3336;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .topnav-icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .notification-icon, .profile-icon {
+    margin-right: 20px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .logout-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .topnav a {
+    margin-right: 15px;
+    color: white;
+    text-decoration: none;
+  }
+  
