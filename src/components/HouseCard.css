@@ -1,58 +1,26 @@
-/* HouseCard.css */
-.house-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.card {
-    width: 300px;
+.house-card {
     border: 1px solid #ddd;
-    padding: 10px;
     border-radius: 8px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-    background-color: white;
-    transition: transform 0.3s ease;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.slideshow {
-    height: 200px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.house-image {
+.house-card img {
     width: 100%;
     height: auto;
-    cursor: pointer;
+    border-radius: 4px;
 }
 
-h2 {
-    color: #088474;
-    margin-top: 10px;
-}
-
-p {
-    color: #555;
-    font-size: 0.9rem;
-}
-
-button {
+.house-card button {
     background-color: #088474;
     color: white;
     border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
+    padding: 10px;
     cursor: pointer;
-    margin-top: 10px;
+    border-radius: 4px;
 }
 
-button:hover {
-    background-color: #066d61;
+.house-card button:hover {
+    background-color: #066a62;
 }
