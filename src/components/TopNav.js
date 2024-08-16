@@ -5,13 +5,14 @@ const TopNav = ({ onLogin, onSignup, onProfile, isLoggedIn }) => {
     return (
         <div className="top-nav">
             <div className="logo-container">
-                <img src="" alt="App Logo" className="logo" />
+                <img src="./images/Neda.png" alt="App Logo" className="logo" />
             </div>
             <div className="app-name">
                 <h1>Nawiri</h1>
             </div>
             <div className="search-bar-container">
                 <input type="text" placeholder="Search..." className="search-bar" />
+                <button>search</button>
             </div>
             <div className="auth-buttons">
                 {isLoggedIn ? (

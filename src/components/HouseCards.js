@@ -8,7 +8,9 @@ const HouseCards = ({ houses, onCardClick }) => {
                 <div className="house-card" key={house.id} onClick={() => onCardClick(house)}>
                     <div className="house-images">
                         <img src={house.images[0]} alt={house.name} className="house-image" />
-                        {/* Additional images can be included in a carousel or gallery */}
+                        <img src={house.images[1]} alt={house.name} className="house-image" />
+                        <img src={house.images[2]} alt={house.name} className="house-image" />
+                        <img src={house.images[3]} alt={house.name} className="house-image" />
                     </div>
                     <h2 className="house-name">{house.name}</h2>
                     <p className="house-description">{house.description}</p>
