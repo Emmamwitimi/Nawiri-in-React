@@ -4,7 +4,6 @@ import BookingForm from './BookingForm';
 import './HomeDashboard.css';
 
 const HomeDashboard = ({ houses,selectedLocation, setSelectedLocation }) => {
-    //const [selectedLocation, setSelectedLocation] = useState('All');
     const [filteredHouses, setFilteredHouses] = useState([]);
     const [isBookingFormOpen, setIsBookingFormOpen] = useState(false);
     const [currentHouse, setCurrentHouse] = useState(null);

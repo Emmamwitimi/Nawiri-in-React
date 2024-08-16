@@ -9,6 +9,7 @@ const App = () => {
     const [houses, setHouses] = useState([]);
     const [selectedLocation, setSelectedLocation] = useState('');
     const [selectedHouse, setSelectedHouse] = useState(null);
+    const [searchQuery, setSearchQuery] = useState('');
 
     useEffect(() => {
         // Fetch data from JSON file
@@ -30,12 +31,17 @@ const App = () => {
         setSelectedHouse(null);
     };
 
+    const handleSearchQuery = (e) =>{
+      e.preventDefault();
+      setSearchQuery(e.target.value);
+    };
+
     return (
         <div className="app">
             <TopNav 
-                onLogin={() => {/* Handle login */}} 
-                onSignup={() => {/* Handle signup */}} 
-                onProfile={() => {/* Handle profile */}} 
+                onLogin={() => {/* login */}} 
+                onSignup={() => {/* signup */}} 
+                onProfile={() => {/* profile */}} 
                 isLoggedIn={false} // Update based on auth state
             />
             <div className="main-content">

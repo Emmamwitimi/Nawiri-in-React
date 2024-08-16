@@ -11,8 +11,10 @@ const TopNav = ({ onLogin, onSignup, onProfile, isLoggedIn }) => {
                 <h1>Nawiri</h1>
             </div>
             <div className="search-bar-container">
-                <input type="text" placeholder="Search..." className="search-bar" />
-                <button>search</button>
+                <form>
+                    <input type="text" placeholder="Search..." className="search-bar" />
+                    <button>search</button>
+                </form>
             </div>
             <div className="auth-buttons">
                 {isLoggedIn ? (
