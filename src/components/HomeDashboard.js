@@ -4,6 +4,7 @@ import BookingForm from './BookingForm';
 import './HomeDashboard.css';
 
 const HomeDashboard = ({ houses,selectedLocation, setSelectedLocation }) => {
+    // State to manage filtered houses, booking form visibility, and current house
     const [filteredHouses, setFilteredHouses] = useState([]);
     const [isBookingFormOpen, setIsBookingFormOpen] = useState(false);
     const [currentHouse, setCurrentHouse] = useState(null);

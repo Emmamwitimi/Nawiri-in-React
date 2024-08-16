@@ -2,6 +2,7 @@ import React from 'react';
 import './HouseCards.css';
 
 const HouseCards = ({ houses, onCardClick }) => {
+    // Renders house cards with image, name, description, and booking button
     return (
         <div className="house-cards-container">
             {houses.map(house => (

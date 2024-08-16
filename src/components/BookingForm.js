@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './BookingForm.css';
 
 const BookingForm = ({ house, onClose }) => {
+     // State to manage form data
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -22,7 +23,7 @@ const BookingForm = ({ house, onClose }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Handle form submission (e.g., send data to server)
+        // Handle form submission 
         console.log('Booking Form Data:', formData);
         onClose(); // Close the booking form after submission
     };

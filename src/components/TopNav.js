@@ -2,6 +2,7 @@ import React from 'react';
 import './TopNav.css';
 
 const TopNav = ({ onLogin, onSignup, onProfile, isLoggedIn }) => {
+     // Renders the top navigation bar with logo, app name, search bar, and authentication buttons
     return (
         <div className="top-nav">
             <div className="logo-container">
