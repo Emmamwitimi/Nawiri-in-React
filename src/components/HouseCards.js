@@ -11,7 +11,6 @@ const HouseCards = ({ houses, onCardClick }) => {
                         {/* Additional images can be included in a carousel or gallery */}
                     </div>
                     <h2 className="house-name">{house.name}</h2>
-                    <p className="house-location">{house.location}</p>
                     <p className="house-description">{house.description}</p>
                     <button className="booking-button">Book Now</button>
                 </div>

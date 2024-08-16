@@ -1,0 +1,65 @@
+{
+    "houses": [
+      {
+        "id": "Tigoni",
+        "name": "Tigoni House",
+        "location": "Tigoni",
+        "description": "Tigoni House is a serene retreat center nestled in the lush greenery of the Tigoni highlands. Offering a tranquil environment, it is an ideal place for personal reflection, prayer, and spiritual growth. The center provides comfortable accommodations, beautiful gardens, and spaces for meditation.",
+        "images": [
+          "images/TIGONI 1.jpg",
+          "images/tigoni2.jfif",
+          "images/tigoni 3.jfif",
+          "images/tigoni 4.jfif"
+        ]
+      },
+      {
+        "id": "Tewa",
+        "name": "Jahazi House",
+        "location": "Tewa",
+        "description": "Jahazi House is a peaceful retreat center located near the coastal region, providing a perfect setting for spiritual retreats and rejuvenation. Surrounded by nature, Tewa House offers attendees a quiet atmosphere to engage in prayer, attend spiritual talks, and find inner peace.",
+        "images": [
+          "images/TEWA1.webp",
+          "images/tewa 2.jfif",
+          "images/tewa 3.jfif",
+          "images/tewa 4.jfif"
+        ]
+      },
+      {
+        "id": "Tusimba",
+        "name": "Tusimba House",
+        "location": "Tusimba",
+        "description": "Tusimba House is known for its welcoming and serene environment, making it an excellent choice for those seeking spiritual renewal. Located in a picturesque setting, it offers ample opportunities for personal prayer, reflection, and participation in spiritual activities.",
+        "images": [
+          "images/tusimba.webp",
+          "images/tusimba 2.jfif",
+          "images/tusimba 3.jfif",
+          "images/tusimba 4.jfif"
+        ]
+      },
+      {
+        "id": "Kisumu",
+        "name": "Kisumu House",
+        "location": "Kisumu",
+        "description": "Kisumu House, situated by the shores of Lake Victoria, provides a unique retreat experience with stunning views and a peaceful ambiance. The center is designed to help attendees disconnect from daily distractions and focus on their spiritual journey through prayer and meditation.",
+        "images": [
+          "images/aa6129_e509d38b3ada49e786bb02fbf13f8410~mv2.webp",
+          "images/kisumu 2.jfif",
+          "images/kisumu 3.jfif",
+          "images/kisumu 4.jfif"
+        ]
+      },
+      {
+        "id": "Bugala",
+        "name": "Bugala House",
+        "location": "Bugala",
+        "description": "Bugala House, located on an island, offers a remote and tranquil retreat experience. This center is perfect for those looking to deepen their spiritual life in a secluded and natural setting. It provides a variety of spiritual programs and activities to enhance personal growth.",
+        "images": [
+          "images/Bugala.jpg",
+          "images/bugala2.jfif",
+          "images/bugala 3.jfif",
+          "images/bugala 4.jfif"
+        ]
+      }
+    ]
+  }
+  
