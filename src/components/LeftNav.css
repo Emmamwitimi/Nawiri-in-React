@@ -1,16 +1,31 @@
-.nav-link{
-  display: inline-block;
-  box-sizing: border-box;
-  width: 60px;
-  padding: 5px;
-  margin: 0 6px 6px;
-  background: #066d61;
+.left-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  background: #f4f4f4; /* Light background color for contrast */
+  border-right: 2px solid #ddd; /* Light border for separation */
+  height: 100vh; /* Full height for left navigation */
+}
+
+.nav-link {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  background: #066d61; /* Darker green background */
   text-decoration: none;
-  text-align: center;
-  font-size: min(10vw, 15px) ;
   color: white;
+  font-size: 16px;
+  border-radius: 4px; /* Rounded corners */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover {
+  background: #055a4f; /* Slightly darker green on hover */
 }
 
 .nav-link.active {
-  color: rgb(25, 223, 196);
+  background: #04b8a4; /* Highlight color for active link */
+  color: #fff; /* Ensure text remains readable */
 }
