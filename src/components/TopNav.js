@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './TopNav.css';
 
-const TopNav = ({ onLogin, onSignup, onProfile, isLoggedIn,onSearch }) => {
-     // Renders the top navigation bar with logo, app name, search bar, and authentication buttons
+const TopNav = ({ onLogin, onSignup, onProfile, isLoggedIn, onSearch }) => {
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const handleSearchChange = (e) => {
+        setSearchTerm(e.target.value);
+        onSearch(e.target.value); // Send the search query back to App
+    };
+
     return (
         <div className="top-nav">
             <div className="logo-container">
@@ -12,7 +18,13 @@ const TopNav = ({ onLogin, onSignup, onProfile, isLoggedIn,onSearch }) => {
                 <h1>Nawiri</h1>
             </div>
             <div className="search-bar-container">
-                <input type="text" placeholder="Search..." className="search-bar" />
+                <input 
+                    type="text" 
+                    placeholder="Search..." 
+                    value={searchTerm} 
+                    onChange={handleSearchChange} 
+                    className="search-bar" 
+                />
             </div>
             <div className="auth-buttons">
                 {isLoggedIn ? (
