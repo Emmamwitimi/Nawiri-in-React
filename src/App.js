@@ -11,8 +11,8 @@ const App = () => {
     const [selectedHouse, setSelectedHouse] = useState(null);
     const [searchQuery, setSearchQuery] = useState(''); // Track search query
 
+    // Fetch house data from JSON file
     useEffect(() => {
-        // Fetch data from JSON file
         fetch('/houses.json')
             .then((response) => response.json())
             .then((data) => setHouses(data.houses))
@@ -32,23 +32,24 @@ const App = () => {
     };
 
     const handleSearchQueryChange = (query) => {
-        setSearchQuery(query);
+        setSearchQuery(query); // This updates the search query
     };
 
     // Filter houses by location and search query
     const filteredHouses = houses.filter((house) => {
         const matchesLocation = !selectedLocation || house.location === selectedLocation;
-        const matchesSearchQuery = house.name.toLowerCase().includes(searchQuery.toLowerCase()) || house.description.toLowerCase().includes(searchQuery.toLowerCase());
+        const matchesSearchQuery = house.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            house.description.toLowerCase().includes(searchQuery.toLowerCase());
         return matchesLocation && matchesSearchQuery;
     });
 
     return (
         <div className="app">
             {/* Top Navigation Bar */}
-            <TopNav 
-                onLogin={() => {/* login */}} 
-                onSignup={() => {/* signup */}} 
-                onProfile={() => {/* profile */}} 
+            <TopNav
+                onLogin={() => {/* handle login */}}
+                onSignup={() => {/* handle signup */}}
+                onProfile={() => {/* handle profile */}}
                 isLoggedIn={false} // Update based on auth state
                 onSearch={handleSearchQueryChange} // Pass search handler
             />
@@ -71,16 +72,16 @@ const App = () => {
                     </div>
 
                     {/* House Cards */}
-                    <HouseCards 
-                        houses={filteredHouses} 
-                        onCardClick={handleCardClick} 
+                    <HouseCards
+                        houses={filteredHouses} // Only filtered houses are passed to HouseCards
+                        onCardClick={handleCardClick}
                     />
 
                     {/* Booking Form (displayed when a house is selected) */}
                     {selectedHouse && (
-                        <BookingForm 
-                            house={selectedHouse} 
-                            onClose={handleCloseForm} 
+                        <BookingForm
+                            house={selectedHouse}
+                            onClose={handleCloseForm}
                         />
                     )}
                 </div>
