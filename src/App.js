@@ -6,11 +6,10 @@ import BookingForm from './components/BookingForm';
 import './App.css';
 
 const App = () => {
-   // State to manage the list of houses, selected location, selected house, and search query
     const [houses, setHouses] = useState([]);
     const [selectedLocation, setSelectedLocation] = useState('');
     const [selectedHouse, setSelectedHouse] = useState(null);
-    const [searchQuery, setSearchQuery] = useState('');
+    const [searchQuery, setSearchQuery] = useState(''); // Track search query
 
     useEffect(() => {
         // Fetch data from JSON file
@@ -19,36 +18,48 @@ const App = () => {
             .then((data) => setHouses(data.houses))
             .catch((error) => console.error('Error fetching houses:', error));
     }, []);
-// Handler for filter change event
+
     const handleFilterChange = (event) => {
         setSelectedLocation(event.target.value);
     };
- // Handler for clicking on a house card
+
     const handleCardClick = (house) => {
         setSelectedHouse(house);
     };
 
-    // Handler for closing the booking form
     const handleCloseForm = () => {
         setSelectedHouse(null);
     };
- // Handler for search query change
-    const handleSearchQuery = (e) =>{
-      e.preventDefault();
-      setSearchQuery(e.target.value);
+
+    const handleSearchQueryChange = (query) => {
+        setSearchQuery(query);
     };
+
+    // Filter houses by location and search query
+    const filteredHouses = houses.filter((house) => {
+        const matchesLocation = !selectedLocation || house.location === selectedLocation;
+        const matchesSearchQuery = house.name.toLowerCase().includes(searchQuery.toLowerCase()) || house.description.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesLocation && matchesSearchQuery;
+    });
 
     return (
         <div className="app">
+            {/* Top Navigation Bar */}
             <TopNav 
                 onLogin={() => {/* login */}} 
                 onSignup={() => {/* signup */}} 
                 onProfile={() => {/* profile */}} 
                 isLoggedIn={false} // Update based on auth state
+                onSearch={handleSearchQueryChange} // Pass search handler
             />
+
+            {/* Main Content Area */}
             <div className="main-content">
                 <LeftNav />
+
+                {/* Main Page Content */}
                 <div className="content-body">
+                    {/* Filter and Search Bar */}
                     <div className="filter-container">
                         <label htmlFor="location-filter">Filter by Location:</label>
                         <select id="location-filter" onChange={handleFilterChange}>
@@ -58,10 +69,14 @@ const App = () => {
                             ))}
                         </select>
                     </div>
+
+                    {/* House Cards */}
                     <HouseCards 
-                        houses={houses.filter(house => !selectedLocation || house.location === selectedLocation)} 
+                        houses={filteredHouses} 
                         onCardClick={handleCardClick} 
                     />
+
+                    {/* Booking Form (displayed when a house is selected) */}
                     {selectedHouse && (
                         <BookingForm 
                             house={selectedHouse} 
