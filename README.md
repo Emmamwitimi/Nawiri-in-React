@@ -7,12 +7,7 @@ Nawiri is a simple web application that allows users to search, filter, and book
 - [Features](#features)
 - [Technologies](#technologies)
 - [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Components](#components)
-- [Future Enhancements](#future-enhancements)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Features
 - Users can view a list of available houses.
