@@ -40,7 +40,9 @@
 .auth-buttons {
   flex: 2;
   display: flex;
-  justify-content: space-around;
+  gap: 4px;
+  align-items: center;
+  /*justify-content: space-around;*/
 }
 
 .login-btn, .signup-btn, .profile-btn {

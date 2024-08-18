@@ -3,7 +3,7 @@
       {
         "id": "Tigoni",
         "name": "Tigoni House",
-        "location": "Tigoni",
+        "location": "Nairobi",
         "description": "Tigoni House is a serene retreat center nestled in the lush greenery of the Tigoni highlands. Offering a tranquil environment, it is an ideal place for personal reflection, prayer, and spiritual growth. The center provides comfortable accommodations, beautiful gardens, and spaces for meditation.",
         "images": [
           "images/TIGONI 1.jpg",
@@ -15,7 +15,7 @@
       {
         "id": "Tewa",
         "name": "Jahazi House",
-        "location": "Tewa",
+        "location": "Mombasa",
         "description": "Jahazi House is a peaceful retreat center located near the coastal region, providing a perfect setting for spiritual retreats and rejuvenation. Surrounded by nature, Tewa House offers attendees a quiet atmosphere to engage in prayer, attend spiritual talks, and find inner peace.",
         "images": [
           "images/TEWA1.webp",
@@ -27,7 +27,7 @@
       {
         "id": "Tusimba",
         "name": "Tusimba House",
-        "location": "Tusimba",
+        "location": "Kisumu",
         "description": "Tusimba House is known for its welcoming and serene environment, making it an excellent choice for those seeking spiritual renewal. Located in a picturesque setting, it offers ample opportunities for personal prayer, reflection, and participation in spiritual activities.",
         "images": [
           "images/tusimba.webp",
@@ -51,10 +51,22 @@
       {
         "id": "Bugala",
         "name": "Bugala House",
-        "location": "Bugala",
+        "location": "Nairobi",
         "description": "Bugala House, located on an island, offers a remote and tranquil retreat experience. This center is perfect for those looking to deepen their spiritual life in a secluded and natural setting. It provides a variety of spiritual programs and activities to enhance personal growth.",
         "images": [
           "images/Bugala.jpg",
+          "images/bugala2.jfif",
+          "images/bugala 3.jfif",
+          "images/bugala 4.jfif"
+        ]
+      },
+      {
+        "id": "Faida",
+        "name": "Faida House",
+        "location": "Nairobi",
+        "description": "Faida House, offers a remote and tranquil retreat experience. This center is perfect for those looking to deepen their spiritual life in a secluded and natural setting. It provides a variety of spiritual programs and activities to enhance personal growth.",
+        "images": [
+          "images/tigoni2.jfif",
           "images/bugala2.jfif",
           "images/bugala 3.jfif",
           "images/bugala 4.jfif"
