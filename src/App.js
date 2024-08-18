@@ -54,7 +54,7 @@ const App = () => {
         setSelectedHouse(house);
     };
 
-    
+
     const handleSearchQueryChange = (query) => {
         setSearchQuery(query); // This updates the search query
     };
@@ -73,7 +73,6 @@ const App = () => {
             <TopNav
                 onLogin={handleLoginClick}
                 onSignup={handleSignupClick}
-                onProfile={handleProfileClick}
                 isLoggedIn={isLoggedIn}
                 onSearch={setSearchQuery}
                 onClose={handleCloseForm}
