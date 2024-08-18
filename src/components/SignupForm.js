@@ -1,28 +1,30 @@
-// Signup.js
-import React, { useState } from "react";
-import { auth } from "./firebaseConfig";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { auth } from './firebaseConfig';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
-const Signup = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const Signup = ({ onLoginClick }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState(null);
-  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (password !== confirmPassword) {
+      setError("Passwords don't match");
+      return;
+    }
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      navigate("/dashboard"); // Redirect to dashboard after signup
+      onLoginClick(); // Switch to login form after signup
     } catch (error) {
       setError(error.message);
     }
   };
 
   return (
-    <div>
-      <h2>Signup</h2>
+    <div className="signup-form-popup">
+      <h2>Sign Up</h2>
       {error && <p>{error}</p>}
       <form onSubmit={handleSubmit}>
         <div>
@@ -43,8 +45,20 @@ const Signup = () => {
             required
           />
         </div>
-        <button type="submit">Signup</button>
+        <div>
+          <label>Confirm Password:</label>
+          <input
+            type="password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+          />
+        </div>
+        <button type="submit">Sign Up</button>
       </form>
+      <p>
+        Already have an account? <span onClick={onLoginClick}>Log In</span>
+      </p>
     </div>
   );
 };

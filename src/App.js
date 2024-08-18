@@ -3,9 +3,14 @@ import TopNav from './components/TopNav';
 import LeftNav from './components/LeftNav';
 import HouseCards from './components/HouseCards';
 import BookingForm from './components/BookingForm';
+import Signup from './components/SignupForm';
+import Login from './components/LoginForm';
 import './App.css';
 
 const App = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [showLogin, setShowLogin] = useState(false);
+    const [showSignup, setShowSignup] = useState(false);
     const [houses, setHouses] = useState([]);
     const [selectedLocation, setSelectedLocation] = useState('');
     const [selectedHouse, setSelectedHouse] = useState(null);
@@ -18,6 +23,26 @@ const App = () => {
             .then((data) => setHouses(data.houses))
             .catch((error) => console.error('Error fetching houses:', error));
     }, []);
+
+
+    const handleLoginClick = () => {
+        setShowLogin(true);
+        setShowSignup(false);
+      };
+    
+      const handleSignupClick = () => {
+        setShowSignup(true);
+        setShowLogin(false);
+      };
+    
+      const handleProfileClick = () => {
+        // Handle profile click
+      };
+    
+      const handleLogin = () => {
+        setIsLoggedIn(true);
+        setShowLogin(false);
+      };
 
     const handleFilterChange = (event) => {
         setSelectedLocation(event.target.value);
@@ -47,12 +72,17 @@ const App = () => {
         <div className="app">
             {/* Top Navigation Bar */}
             <TopNav
-                onLogin={() => {/* handle login */}}
-                onSignup={() => {/* handle signup */}}
-                onProfile={() => {/* handle profile */}}
-                isLoggedIn={false} // Update based on auth state
-                onSearch={handleSearchQueryChange} // Pass search handler
+                onLogin={handleLoginClick}
+                onSignup={handleSignupClick}
+                onProfile={handleProfileClick}
+                isLoggedIn={isLoggedIn}
+                onSearch={setSearchQuery}
             />
+
+            {/* Conditionally render login or signup form */}
+            {showLogin && <Login onSignupClick={handleSignupClick} />}
+            {showSignup && <Signup onLoginClick={handleLoginClick} />}
+
 
             {/* Main Content Area */}
             <div className="main-content">

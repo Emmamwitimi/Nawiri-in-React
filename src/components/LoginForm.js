@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { auth } from "./firebaseConfig";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { auth } from './firebaseConfig';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const Login = ({ onSignupClick }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -13,14 +13,14 @@ const Login = () => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/dashboard"); // Redirect to dashboard after login
+      navigate('/dashboard'); // Redirect to dashboard after login
     } catch (error) {
       setError(error.message);
     }
   };
 
   return (
-    <div>
+    <div className="login-form-popup">
       <h2>Login</h2>
       {error && <p>{error}</p>}
       <form onSubmit={handleSubmit}>
@@ -44,6 +44,9 @@ const Login = () => {
         </div>
         <button type="submit">Login</button>
       </form>
+      <p>
+        Don't have an account? <span onClick={onSignupClick}>Sign Up</span>
+      </p>
     </div>
   );
 };
