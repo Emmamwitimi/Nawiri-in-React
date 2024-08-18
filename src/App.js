@@ -79,8 +79,8 @@ const App = () => {
             />
 
             {/* Conditionally render login or signup form */}
-            {showLogin && <Login onSignupClick={handleSignupClick} />}
-            {showSignup && <Signup onLoginClick={handleLoginClick} />}
+            {showLogin && <Login onSignupClick={handleSignupClick} onClose={handleCloseForm} />}
+            {showSignup && <Signup onLoginClick={handleLoginClick}  onClose={handleCloseForm}/>}
 
 
             {/* Main Content Area */}
