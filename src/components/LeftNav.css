@@ -5,12 +5,12 @@
   padding: 20px;
   background: #f4f4f4; /* Light background color for contrast */
   border-right: 2px solid #ddd; /* Light border for separation */
-  height: 100vh; /* Full height for left navigation */
+  height: 100%; /* Full height for left navigation */
 }
 
 .nav-link {
   display: block;
-  width: 100%;
+  width: 80%;
   padding: 12px 20px;
   margin: 8px 0;
   background: #115f64;/* Darker green background */

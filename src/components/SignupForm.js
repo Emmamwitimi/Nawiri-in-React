@@ -3,7 +3,7 @@ import { auth ,db} from '../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
-import './SignupForm.css'; // Ensure this CSS file contains the modal styles
+import './Form.css'; // Ensure this CSS file contains the modal styles
 
 const Signup = ({ onLoginClick, onClose }) => {
   const [email, setEmail] = useState('');

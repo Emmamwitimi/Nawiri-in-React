@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter,RouterProvider } from 'react-router-dom';
 import ProfilePage from './pages/ProfilePage';
+import ResourcesPage from './pages/ResoucesPage';
+import ActivitiesPage from './pages/ActivitiesPage'
 
 
 const router= createBrowserRouter([
@@ -15,6 +17,14 @@ const router= createBrowserRouter([
   {
     path: "/profile",
     element: <ProfilePage/>
+  },
+  {
+    path: "activities",
+    element : <ActivitiesPage/>
+  },
+  {
+    path : "resouces",
+    element: <ResourcesPage/>
   }
 ]);
 
