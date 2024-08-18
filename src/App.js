@@ -35,8 +35,9 @@ const App = () => {
         setShowLogin(false);
       };
     
-      const handleProfileClick = () => {
-        // Handle profile click
+      const handleCloseForm = () => {
+        setShowLogin(false);
+        setShowSignup(false);
       };
     
       const handleLogin = () => {
@@ -77,6 +78,7 @@ const App = () => {
                 onProfile={handleProfileClick}
                 isLoggedIn={isLoggedIn}
                 onSearch={setSearchQuery}
+                onClose={handleCloseForm}
             />
 
             {/* Conditionally render login or signup form */}
