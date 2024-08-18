@@ -38,6 +38,7 @@ const App = () => {
       const handleCloseForm = () => {
         setShowLogin(false);
         setShowSignup(false);
+        setSelectedHouse(null);
       };
     
       const handleLogin = () => {
@@ -53,10 +54,7 @@ const App = () => {
         setSelectedHouse(house);
     };
 
-    const handleCloseForm = () => {
-        setSelectedHouse(null);
-    };
-
+    
     const handleSearchQueryChange = (query) => {
         setSearchQuery(query); // This updates the search query
     };
