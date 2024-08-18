@@ -1,0 +1,68 @@
+/* Modal overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Background dim effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensures the modal is on top */
+}
+
+/* Card styling for login/signup form */
+.modal-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow for depth */
+    width: 400px; /* Adjust for desired size */
+    max-width: 90%; /* Responsive on smaller screens */
+    text-align: left;
+    position: relative; /* Needed for close button positioning */
+}
+
+/* Close button styling */
+.modal-card .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Form input styling */
+.modal-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-card form label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.modal-card form input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.modal-card form button {
+    padding: 10px;
+    background-color: #088474;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-card form button:hover {
+    background-color: #06695b;
+}
