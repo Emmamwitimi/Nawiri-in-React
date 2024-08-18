@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { auth } from '../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import "./SignupForm.css"
+import './SignupForm.css'; // Ensure this CSS file contains the modal styles
 
-const Signup = ({ onLoginClick }) => {
+const Signup = ({ onLoginClick, onClose }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -24,42 +24,45 @@ const Signup = ({ onLoginClick }) => {
   };
 
   return (
-    <div className="signup-form-popup">
-      <h2>Sign Up</h2>
-      {error && <p>{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Confirm Password:</label>
-          <input
-            type="password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Sign Up</button>
-      </form>
-      <p>
-        Already have an account? <span onClick={onLoginClick}>Log In</span>
-      </p>
+    <div className="modal-overlay">
+      <div className="modal-card">
+        <button className="close-btn" onClick={onClose}>&times;</button>
+        <h2>Sign Up</h2>
+        {error && <p>{error}</p>}
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label>Email:</label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label>Password:</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label>Confirm Password:</label>
+            <input
+              type="password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+          </div>
+          <button type="submit">Sign Up</button>
+        </form>
+        <p>
+          Already have an account? <span onClick={onLoginClick}>Log In</span>
+        </p>
+      </div>
     </div>
   );
 };
