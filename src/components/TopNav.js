@@ -32,7 +32,6 @@ const TopNav = ({ onLogin, onSignup, onProfile, isLoggedIn, onSearch }) => {
                 ) : (
                     <>
                         <button className="login-btn" onClick={onLogin}>Login</button>
-                        <button className="signup-btn" onClick={onSignup}>Sign Up</button>
                     </>
                 )}
             </div>
