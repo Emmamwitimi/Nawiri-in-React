@@ -1,43 +1,28 @@
-import React, { useState } from 'react';
-import './TopNav.css';
+import React from 'react';
 
-const TopNav = ({ onLogin, onSignup, onProfile, isLoggedIn, onSearch }) => {
-    const [searchTerm, setSearchTerm] = useState('');
-
-    const handleSearchChange = (e) => {
-        setSearchTerm(e.target.value);
-        onSearch(e.target.value); // Send the search query back to App
-    };
-
-    return (
-        <div className="top-nav">
-            <div className="logo-container">
-                <img src="./images/Neda.png" alt="App Logo" className="logo" />
-            </div>
-            <div className="app-name">
-                <h1>Nawiri</h1>
-            </div>
-            <div className="search-bar-container">
-                <input 
-                    type="text" 
-                    placeholder="Search..." 
-                    value={searchTerm} 
-                    onChange={handleSearchChange} 
-                    className="search-bar" 
-                />
-            </div>
-            <div className="auth-buttons">
-                {isLoggedIn ? (
-                    <button className="profile-btn" onClick={onProfile}>Profile</button>
-                ) : (
-                    <>
-                        <button className="login-btn" onClick={onLogin}>Login</button>
-                        <button className="signup-btn" onClick={onSignup}>Sign up</button>
-                    </>
-                )}
-            </div>
-        </div>
-    );
-};
-
-export default TopNav;
+export default function TopNav({ onAuthClick }) {
+  return (
+    <nav className="bg-green-800 p-6 shadow-lg flex justify-between items-center">
+      {/* Logo and Title */}
+      <div className="flex justify-between items-center">
+        <img src="/images/NEDA.png" alt="Logo" className="h-8 mr-2" />
+      </div>
+      <h1 className="text-lg font-semibold text-white">Nawiri</h1>
+      {/* Auth Buttons */}
+      <div>
+        <button
+          onClick={() => onAuthClick('login')}
+          className="bg-darkTeal hover:bg-green-800  text-white px-4 py-2 rounded mr-2"
+        >
+          Login
+        </button>
+        <button
+          onClick={() => onAuthClick('signup')}
+          className=" hover:bg-green-800 text-white px-4 py-2 rounded"
+        >
+          Signup
+        </button>
+      </div>
+    </nav>
+  );
+}
