@@ -20,7 +20,7 @@ const HouseCards = ({ houses, onCardClick }) => {
                         <h2 className="text-xl font-semibold mb-2">{house.name}</h2>
                         <p className="text-gray-600 mb-4">{house.description}</p>
                         <button 
-                            className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition-colors duration-200"
+                            className="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600 transition-colors duration-200"
                             onClick={(e) => {
                                 e.stopPropagation(); // Prevents triggering onCardClick
                                 onCardClick(house);
