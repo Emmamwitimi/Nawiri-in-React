@@ -3,6 +3,9 @@ https://nawiri-in-react.vercel.app/?
 
 Nawiri is a simple web application that allows users to search, filter, and book stays at various houses located in different regions. The project demonstrates the use of React for building interactive user interfaces, state management, and handling form submissions.
 
+#Figma
+https://www.figma.com/proto/1nH392J2GmQCIutGDrzAgP/NAWIRI?node-id=1-2&starting-point-node-id=1%3A2&t=JalbBwzg0SuhbZ40-1
+
 ## Table of Contents
 - [Features](#features)
 - [Technologies](#technologies)
